@@ -50,7 +50,7 @@
 const char line[] = "  +---+---+---+---+---+---+---+---+---+---+",
 				EAU[] = "   |",
 				EAU_T[] = ANSI_COLOR_BLUE " X " ANSI_COLOR_RESET "|",
-				BAT[] = ANSI_COLOR_GREEN "***" ANSI_COLOR_RESET "|",
+				BAT[] = ANSI_COLOR_GREEN "XXX" ANSI_COLOR_RESET "|",
 				BAT_T[] = ANSI_COLOR_RED "XXX" ANSI_COLOR_RESET "|";
 
 typedef struct {
@@ -110,20 +110,6 @@ Coordonnees strToCoord(char string[], int hasDirection) {
 	c.x = strtol(strX, NULL, 10) - 1;
 
 	return c;
-}
-
-/**
- * @brief Affiche un beau logo
- */
-void logo() {
-	printf(ANSI_COLOR_GREEN);
-	printf(" ____        _        _ _ _                               _      \n");
-	printf("| __ )  __ _| |_ __ _(_) | | ___   _ __   __ ___   ____ _| | ___ \n");
-	printf("|  _ \\ / _` | __/ _` | | | |/ _ \\ | '_ \\ / _` \\ \\ / / _` | |/ _ \\\n");
-	printf("| |_) | (_| | || (_| | | | |  __/ | | | | (_| |\\ V / (_| | |  __/\n");
-	printf("|____/ \\__,_|\\__\\__,_|_|_|_|\\___| |_| |_|\\__,_| \\_/ \\__,_|_|\\___|\n\n");
-	printf(ANSI_COLOR_BLUE"        _     _     _ " ANSI_COLOR_RESET "__-=-//__  __\\\\-=-__" ANSI_COLOR_BLUE " _     _     _        \n" ANSI_COLOR_RESET);
-	printf(ANSI_COLOR_BLUE".-.,.-'`(,.-'`(,.-'`(," ANSI_COLOR_RESET "\\_______/" ANSI_COLOR_BLUE ".." ANSI_COLOR_RESET "\\_______/" ANSI_COLOR_BLUE ",)`'-.,)`'-.,)`'-.,¸.-.\n\n" ANSI_COLOR_RESET);
 }
 
 /**
@@ -668,7 +654,6 @@ int wait_handshake(InfosServer is) {
 int main() {
 	int t, self_port, other_port, status, perdu;
 
-	logo();
 
 	/*
 	 * Saisie du type d'instance.
